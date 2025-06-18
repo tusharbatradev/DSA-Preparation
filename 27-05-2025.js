@@ -1,23 +1,17 @@
-// Binary Search
-function BinarySearch(arr, key) {
+function binarySearch(arr, key) {
   let start = 0;
   let end = arr.length - 1;
-  let available = false;
 
   while (start <= end) {
     let mid = Math.floor((start + end) / 2);
-
     if (arr[mid] === key) {
-      available = true;
-      break
+      return true;
     } else if (arr[mid] < key) {
       start = mid + 1;
     } else {
       end = mid - 1;
     }
   }
-
-  console.log(available);
 }
 
-BinarySearch([2, 6, 5, 8, 9], 11);
+console.log(binarySearch([1,8,11,17,19,21],21))
